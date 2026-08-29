@@ -45,7 +45,7 @@ function App() {
     setToastInfo({
       show: true,
       productName: product?.name || "Dry Fruit Pack",
-      weight: weight,
+      weight,
     });
 
     setTimeout(() => {
@@ -63,8 +63,10 @@ function App() {
     }));
   };
 
+  const basename = import.meta.env.BASE_URL.replace(/\/$/, "");
+
   return (
-    <BrowserRouter basename="/dry-fruits">
+    <BrowserRouter basename={basename}>
       <ScrollToTop />
 
       <div className="app-container">

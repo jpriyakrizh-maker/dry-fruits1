@@ -19,11 +19,7 @@ function ScrollToTop() {
 
   useEffect(() => {
     if (!hash) {
-      window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: "smooth",
-      });
+      window.scrollTo(0, 0);
     }
   }, [pathname, hash]);
 
@@ -63,10 +59,8 @@ function App() {
     }));
   };
 
-  const basename = import.meta.env.BASE_URL.replace(/\/$/, "");
-
   return (
-    <BrowserRouter basename={basename}>
+    <BrowserRouter basename="/dry-fruits1">
       <ScrollToTop />
 
       <div className="app-container">

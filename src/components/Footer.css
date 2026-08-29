@@ -1,19 +1,19 @@
-/* =========================================================
-   NutriDry Footer Styling
-   ========================================================= */
 
 .footer-section {
   background: var(--color-brown-dark);
-  color: #E2D9CF;
+  color: #e2d9cf;
   position: relative;
   overflow: hidden;
   margin-top: 60px;
 }
-
 .footer-top-wave {
   height: 24px;
-  background: linear-gradient(135deg, var(--color-green-primary) 0%, var(--color-green-light) 100%);
   width: 100%;
+  background: linear-gradient(
+    135deg,
+    var(--color-green-primary) 0%,
+    var(--color-green-light) 100%
+  );
 }
 
 .footer-content {
@@ -21,7 +21,8 @@
   z-index: 1;
 }
 
-/* Brand */
+
+
 .logo-icon-wrapper-footer {
   width: 42px;
   height: 42px;
@@ -43,34 +44,45 @@
 }
 
 .footer-brand-name span {
-  color: #85CC66;
+  color: #85cc66;
 }
 
 .footer-brand-tag {
+  display: block;
   font-size: 0.65rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  color: #B5A89B;
+  color: #b5a89b;
+  margin-top: 4px;
 }
 
 .footer-desc {
   font-size: 0.92rem;
   line-height: 1.65;
-  color: #C7BCB0;
+  color: #c7bcb0;
   margin-top: 12px;
 }
+
+
+/* =========================================================
+   TRUST BADGES
+   ========================================================= */
 
 .trust-pill {
   font-size: 0.78rem;
   background: rgba(255, 255, 255, 0.08);
   padding: 5px 12px;
   border-radius: 20px;
-  color: #E5DFD7;
+  color: #e5dfd7;
   font-weight: 600;
 }
 
-/* Headings */
+
+/* =========================================================
+   FOOTER HEADINGS
+   ========================================================= */
+
 .footer-heading {
   font-family: var(--font-sans);
   font-size: 1.1rem;
@@ -82,7 +94,7 @@
 }
 
 .footer-heading::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -92,7 +104,11 @@
   border-radius: 2px;
 }
 
-/* Links */
+
+/* =========================================================
+   FOOTER LINKS
+   ========================================================= */
+
 .footer-links-list {
   list-style: none;
   padding: 0;
@@ -104,11 +120,12 @@
 }
 
 .footer-links-list a {
-  color: #C5BAAD;
+  color: #c5baad;
   font-size: 0.92rem;
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  text-decoration: none;
   transition: all 0.2s ease;
 }
 
@@ -125,14 +142,19 @@
 
 .footer-links-list a:hover i {
   transform: translateX(2px);
-  color: #85CC66;
+  color: #85cc66;
 }
 
-/* Newsletter */
+
+/* =========================================================
+   NEWSLETTER
+   ========================================================= */
+
 .footer-newsletter-text {
   font-size: 0.9rem;
-  color: #C5BAAD;
+  color: #c5baad;
   margin-bottom: 14px;
+  line-height: 1.6;
 }
 
 .newsletter-form-footer .newsletter-input {
@@ -152,7 +174,7 @@
 }
 
 .newsletter-form-footer .newsletter-input::placeholder {
-  color: #8E8276;
+  color: #8e8276;
 }
 
 .btn-newsletter-submit {
@@ -163,7 +185,7 @@
   padding: 0 20px;
   font-weight: 600;
   font-size: 0.9rem;
-  transition: var(--transition-fast);
+  transition: all 0.25s ease;
 }
 
 .btn-newsletter-submit:hover {
@@ -173,11 +195,15 @@
 
 .subscribe-success-msg {
   font-size: 0.82rem;
-  color: #85CC66;
+  color: #85cc66;
   font-weight: 600;
 }
 
-/* Contact Details */
+
+/* =========================================================
+   CONTACT DETAILS
+   ========================================================= */
+
 .footer-contact-details {
   display: flex;
   flex-direction: column;
@@ -189,26 +215,33 @@
   align-items: flex-start;
   gap: 10px;
   font-size: 0.88rem;
-  color: #BDB2A5;
+  color: #bdb2a5;
+  line-height: 1.5;
 }
 
 .contact-item i {
   color: var(--color-amber);
   font-size: 1rem;
   margin-top: 2px;
+  min-width: 16px;
 }
 
-/* Social Buttons */
+
+/* =========================================================
+   SOCIAL BUTTONS
+   ========================================================= */
+
 .social-btn {
   width: 38px;
   height: 38px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.08);
-  color: #E2D9CF;
+  color: #e2d9cf;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.05rem;
+  text-decoration: none;
   transition: all 0.25s ease;
 }
 
@@ -219,7 +252,87 @@
   box-shadow: 0 6px 16px rgba(45, 90, 39, 0.4);
 }
 
+
+/* =========================================================
+   COPYRIGHT
+   ========================================================= */
+
 .copyright-text {
   font-size: 0.85rem;
-  color: #9E9285;
+  color: #9e9285;
+  line-height: 1.5;
+}
+
+.copyright-text strong {
+  color: #cfc5ba;
+}
+
+
+/* =========================================================
+   MOBILE RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .footer-section {
+    margin-top: 40px;
+  }
+
+  .footer-heading {
+    font-size: 1rem;
+    margin-bottom: 15px;
+  }
+
+  .footer-desc {
+    font-size: 0.88rem;
+  }
+
+  .footer-links-list a {
+    font-size: 0.86rem;
+  }
+
+  .footer-newsletter-text {
+    font-size: 0.85rem;
+  }
+}
+
+
+@media (max-width: 576px) {
+  .footer-section {
+    margin-top: 30px;
+  }
+
+  .footer-content {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .trust-badges {
+    align-items: flex-start !important;
+    flex-direction: column;
+  }
+
+  .newsletter-form-footer .newsletter-input {
+    font-size: 0.82rem;
+    padding: 9px 14px;
+  }
+
+  .btn-newsletter-submit {
+    padding: 0 14px;
+    font-size: 0.82rem;
+  }
+
+  .contact-item {
+    font-size: 0.82rem;
+  }
+
+  .copyright-text {
+    text-align: center;
+    font-size: 0.78rem;
+  }
+
+  .social-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 0.95rem;
+  }
 }

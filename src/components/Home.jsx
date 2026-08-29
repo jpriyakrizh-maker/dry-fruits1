@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Link } from "react-router-dom";
 import {
@@ -14,96 +15,66 @@ function Home({ addToCart }) {
       ["Almonds", "Cashews", "Pistachios", "Walnuts"].includes(
         item.category
       ) && item.isPopular
-  );
+  ).slice(0, 4);
 
-  const keyFeatures = [
+  const features = [
     {
       icon: "bi-flower1",
-      title: "100% Natural & Organic",
-      desc: "Directly sourced from certified organic orchards with zero chemical additives or preservatives.",
+      title: "100% Natural",
+      text: "Pure dry fruits with no unnecessary additives.",
     },
     {
       icon: "bi-shield-check",
-      title: "Handpicked Premium Grade",
-      desc: "Each nut is carefully graded, sorted, and vacuum-sealed to preserve natural aroma and crunch.",
+      title: "Premium Quality",
+      text: "Carefully selected and packed for freshness.",
     },
     {
       icon: "bi-heart-pulse-fill",
-      title: "Nutrient Rich Powerhouses",
-      desc: "Packed with plant proteins, heart-healthy antioxidants, essential dietary fibers, and minerals.",
+      title: "Healthy Choice",
+      text: "Naturally rich in essential nutrients.",
     },
     {
       icon: "bi-truck",
-      title: "Express Air Delivery",
-      desc: "Fresh harvests delivered to your doorstep within 48-72 hours in moisture-lock packaging.",
-    },
-  ];
-
-  const nutritionHighlights = [
-    {
-      number: "100%",
-      label: "Pure & Organic",
-      icon: "bi-patch-check",
-    },
-    {
-      number: "0g",
-      label: "Added Sugar",
-      icon: "bi-droplet-half",
-    },
-    {
-      number: "25+",
-      label: "Essential Nutrients",
-      icon: "bi-stars",
-    },
-    {
-      number: "50k+",
-      label: "Happy Snacker Families",
-      icon: "bi-emoji-smile",
+      title: "Fast Delivery",
+      text: "Fresh products delivered safely to your doorstep.",
     },
   ];
 
   return (
     <main className="nutridry-home">
 
-      {/* HERO SECTION */}
+      {/* HERO */}
       <section className="hero-section">
-        <div className="hero-shape-bg"></div>
-
         <div className="container">
           <div className="row align-items-center g-5">
 
-            {/* LEFT CONTENT */}
-            <div className="col-lg-6 hero-text-col animate-fade-up">
+            <div className="col-lg-6 hero-text-col">
+              <span className="hero-tag-badge">
+                <i className="bi bi-stars"></i>
+                Premium • Fresh • Healthy
+              </span>
 
-              <div className="hero-tag-badge">
-                <i className="bi bi-stars"></i>{" "}
-                Handpicked Harvest • 100% Raw & Roasted
-              </div>
-
-              {/* React Bits Style SplitText */}
               <SplitText
                 text="Healthy Goodness, Naturally Delicious"
                 className="hero-main-title"
                 delay={45}
-                duration={1.1}
-                from={{ opacity: 0, y: 45 }}
+                duration={1}
+                from={{ opacity: 0, y: 40 }}
                 to={{ opacity: 1, y: 0 }}
               />
 
               <p className="hero-description">
-                Elevate your daily snacking with nature’s finest dry fruits,
-                crunchiest nuts, and gourmet seed mixes. Hand-selected for
-                unmatched freshness, superior crunch, and pure holistic
-                wellness.
+                Discover premium dry fruits, crunchy nuts and healthy
+                snack mixes selected with care for your everyday
+                nutrition.
               </p>
 
-              <div className="hero-cta-group d-flex flex-wrap align-items-center gap-3">
-
+              <div className="hero-cta-group">
                 <Link
                   to="/products"
                   className="btn-nutri-primary hero-btn-main"
                 >
-                  <span>Shop Now</span>
+                  Shop Now
                   <i className="bi bi-arrow-right-circle-fill"></i>
                 </Link>
 
@@ -111,97 +82,73 @@ function Home({ addToCart }) {
                   href="#popular"
                   className="btn-nutri-secondary hero-btn-sub"
                 >
-                  <span>Explore Bestsellers</span>
+                  Explore Products
                   <i className="bi bi-chevron-down"></i>
                 </a>
-
               </div>
 
-              {/* QUICK STATS */}
-              <div className="hero-stats-strip row g-3 mt-4 pt-3 border-top">
+              <div className="hero-stats-strip">
+                <div>
+                  <strong>100%</strong>
+                  <span>Natural</span>
+                </div>
 
-                {nutritionHighlights.slice(0, 3).map((stat, idx) => (
-                  <div key={idx} className="col-4">
-                    <div className="stat-box">
-                      <h4 className="stat-number">{stat.number}</h4>
-                      <p className="stat-label">{stat.label}</p>
-                    </div>
-                  </div>
-                ))}
+                <div>
+                  <strong>25+</strong>
+                  <span>Products</span>
+                </div>
 
+                <div>
+                  <strong>50K+</strong>
+                  <span>Customers</span>
+                </div>
               </div>
             </div>
 
-            {/* RIGHT HERO IMAGE */}
             <div className="col-lg-6 hero-visual-col">
-
-              <div className="hero-image-wrapper animate-fade-in">
+              <div className="hero-image-wrapper">
 
                 <div className="hero-main-card">
-
                   <img
-                    src="https://images.unsplash.com/photo-1596560548464-f010549b84d7?auto=format&fit=crop&w=900&q=80"
-                    alt="NutriDry Premium Assorted Dry Fruits"
-                    className="hero-img img-fluid"
+                    src="https://images.unsplash.com/photo-1596560548464-f010549b84d7?auto=format&fit=crop&w=1000&q=85"
+                    alt="Premium Dry Fruits"
+                    className="hero-img"
                   />
 
                   <div className="hero-card-overlay">
-
-                    <span className="overlay-badge">
-                      <i className="bi bi-check2-circle me-1"></i>
-                      Harvest 2026 Fresh
+                    <span>
+                      <i className="bi bi-check-circle-fill"></i>
+                      Freshly Packed
                     </span>
 
-                    <h3 className="overlay-title">
-                      Artisan Nut Assortment
-                    </h3>
+                    <h3>Premium Dry Fruits</h3>
 
-                    <p className="overlay-sub">
+                    <p>
                       Almonds • Cashews • Pistachios • Walnuts
                     </p>
-
                   </div>
                 </div>
 
-                {/* FLOATING BADGE 1 */}
-                <div className="floating-badge badge-top-left animate-float">
-
-                  <div className="badge-icon green-icon">
+                <div className="floating-badge badge-top-left">
+                  <div className="badge-icon">
                     <i className="bi bi-shield-check"></i>
                   </div>
 
                   <div>
-                    <span className="badge-title">
-                      100% Organic
-                    </span>
-
-                    <span className="badge-subtitle">
-                      Zero Preservatives
-                    </span>
+                    <strong>Quality Assured</strong>
+                    <small>Premium Grade</small>
                   </div>
-
                 </div>
 
-                {/* FLOATING BADGE 2 */}
-                <div
-                  className="floating-badge badge-bottom-right animate-float"
-                  style={{ animationDelay: "1.5s" }}
-                >
-
-                  <div className="badge-icon amber-icon">
-                    <i className="bi bi-lightning-charge-fill"></i>
+                <div className="floating-badge badge-bottom-right">
+                  <div className="badge-icon">
+                    <i className="bi bi-heart-fill"></i>
                   </div>
 
                   <div>
-                    <span className="badge-title">
-                      High Energy
-                    </span>
-
-                    <span className="badge-subtitle">
-                      Plant Protein & Omega-3
-                    </span>
+                    <strong>Healthy Choice</strong>
+                    <small>Rich in nutrients</small>
                   </div>
-
                 </div>
 
               </div>
@@ -211,57 +158,40 @@ function Home({ addToCart }) {
         </div>
       </section>
 
-      {/* KEY FEATURES */}
-      <section className="features-section py-5">
-
+      {/* FEATURES */}
+      <section className="features-section">
         <div className="container">
-
           <div className="row g-4">
-
-            {keyFeatures.map((item, index) => (
+            {features.map((feature, index) => (
               <div
-                key={index}
                 className="col-12 col-sm-6 col-lg-3"
+                key={index}
               >
-
-                <div className="feature-card h-100">
-
+                <div className="feature-card">
                   <div className="feature-icon-wrapper">
-                    <i className={`bi ${item.icon}`}></i>
+                    <i className={`bi ${feature.icon}`}></i>
                   </div>
 
-                  <h4 className="feature-title">
-                    {item.title}
-                  </h4>
-
-                  <p className="feature-desc">
-                    {item.desc}
-                  </p>
-
+                  <h3>{feature.title}</h3>
+                  <p>{feature.text}</p>
                 </div>
-
               </div>
             ))}
-
           </div>
-
         </div>
-
       </section>
 
-      {/* POPULAR DRY FRUITS */}
+      {/* POPULAR PRODUCTS */}
       <section
-        className="popular-section py-5"
+        className="popular-section"
         id="popular"
       >
-
         <div className="container">
 
           <div className="section-header">
-
             <span className="section-tag">
-              <i className="bi bi-fire"></i>{" "}
-              Most Loved Superfoods
+              <i className="bi bi-fire"></i>
+              Customer Favorites
             </span>
 
             <h2 className="section-title">
@@ -269,50 +199,31 @@ function Home({ addToCart }) {
             </h2>
 
             <p className="section-subtitle">
-              Indulge in our classic, customer-favorite nuts packed
-              with essential nutrients, buttery crunch, and wholesome
-              natural taste.
+              Our most loved dry fruits, carefully selected for
+              freshness, taste and quality.
             </p>
-
           </div>
 
           <div className="row g-4">
-
             {popularDryFruits.map((product) => (
-
               <div
-                key={product.id}
                 className="col-12 col-sm-6 col-lg-3"
+                key={product.id}
               >
-
-                <div className="product-card-popular h-100">
-
-                  <div className="card-top-badges">
-
-                    <span className={`badge-${product.badgeType}`}>
-                      {product.badge}
-                    </span>
-
-                    <span className="badge-discount">
-                      {product.discount}
-                    </span>
-
-                  </div>
+                <div className="product-card-popular">
 
                   <div className="product-img-container">
-
                     <img
                       src={product.image}
                       alt={product.name}
                       className="product-main-img"
-                      loading="lazy"
                     />
 
-                    <span className="product-origin-tag">
-                      <i className="bi bi-geo-alt"></i>{" "}
-                      {product.origin}
-                    </span>
-
+                    {product.badge && (
+                      <span className="product-badge">
+                        {product.badge}
+                      </span>
+                    )}
                   </div>
 
                   <div className="product-card-body">
@@ -326,65 +237,36 @@ function Home({ addToCart }) {
                     </h3>
 
                     <div className="product-rating-box">
+                      <span className="stars">
+                        ★★★★★
+                      </span>
 
-                      <div className="stars text-warning">
-
-                        <i className="bi bi-star-fill"></i>
-                        <i className="bi bi-star-fill"></i>
-                        <i className="bi bi-star-fill"></i>
-                        <i className="bi bi-star-fill"></i>
-                        <i className="bi bi-star-fill"></i>
-
-                      </div>
-
-                      <span className="rating-num">
+                      <span>
                         {product.rating}
                       </span>
 
-                      <span className="reviews-num">
+                      <small>
                         ({product.reviews})
-                      </span>
-
+                      </small>
                     </div>
 
                     <p className="product-short-desc">
                       {product.description}
                     </p>
 
-                    <div className="product-benefits-pills">
-
-                      {product.benefits
-                        .slice(0, 2)
-                        .map((benefit, i) => (
-
-                          <span
-                            key={i}
-                            className="benefit-pill"
-                          >
-                            <i className="bi bi-check2"></i>{" "}
-                            {benefit}
-                          </span>
-
-                        ))}
-
-                    </div>
-
-                    <div className="card-price-action d-flex align-items-center justify-content-between pt-3 border-top mt-3">
-
+                    <div className="card-price-action">
                       <div className="price-container">
-
-                        <span className="current-price">
+                        <strong>
                           ${product.price.toFixed(2)}
-                        </span>
+                        </strong>
 
-                        <span className="old-price">
-                          ${product.originalPrice.toFixed(2)}
-                        </span>
+                        {product.originalPrice && (
+                          <del>
+                            ${product.originalPrice.toFixed(2)}
+                          </del>
+                        )}
 
-                        <span className="price-unit">
-                          / 250g
-                        </span>
-
+                        <small>/ 250g</small>
                       </div>
 
                       <button
@@ -393,356 +275,228 @@ function Home({ addToCart }) {
                         onClick={() =>
                           addToCart(product, "250g")
                         }
-                        title="Add to Cart"
                       >
-                        <i className="bi bi-cart-plus-fill me-1"></i>
-                        <span>Add</span>
+                        <i className="bi bi-cart-plus-fill"></i>
+                        Add
                       </button>
-
                     </div>
 
                   </div>
-
                 </div>
-
               </div>
-
             ))}
-
           </div>
 
           <div className="text-center mt-5">
-
             <Link
               to="/products"
               className="btn-nutri-secondary btn-view-all"
             >
-              <span>
-                Explore All {DRY_FRUITS_DATA.length}+ Dry Fruits
-              </span>
-
+              View All Products
               <i className="bi bi-arrow-right"></i>
             </Link>
-
           </div>
 
         </div>
-
       </section>
 
-      {/* PROMOTIONAL BANNER */}
-      <section className="promo-banner-section my-5">
-
+      {/* PROMO */}
+      <section className="promo-banner-section">
         <div className="container">
-
           <div className="promo-banner-card">
 
             <div className="row align-items-center g-4">
 
               <div className="col-lg-7">
-
                 <span className="promo-deal-tag">
-                  <i className="bi bi-gift-fill me-1"></i>
-                  Festive & Wellness Special
+                  <i className="bi bi-gift-fill"></i>
+                  Special Combo
                 </span>
 
                 <h2 className="promo-banner-title">
-                  Boost Your Family’s Immunity With Our 7-in-1
-                  Daily Vitality Pack
+                  Make Every Snack Healthy & Delicious
                 </h2>
 
                 <p className="promo-banner-desc">
-                  Carefully balanced ratio of Almonds, Cashews,
-                  Kashmiri Walnuts, Roasted Pistachios, Blueberries
-                  & Seeds. Free gift box packaging on all combo orders!
+                  Enjoy a tasty combination of premium almonds,
+                  cashews, pistachios and walnuts. Perfect for
+                  everyday snacking and gifting.
                 </p>
 
-                <div className="d-flex flex-wrap align-items-center gap-3 mt-4">
-
-                  <Link
-                    to="/products?category=Berries%20%26%20Mixes"
-                    className="btn-nutri-amber"
-                  >
-                    <i className="bi bi-bag-check-fill me-1"></i>
-                    Get Combo Deal — 20% Off
-                  </Link>
-
-                  <Link
-                    to="/products"
-                    className="btn-nutri-secondary btn-white-glass"
-                  >
-                    View Gift Hampers
-                  </Link>
-
-                </div>
-
+                <Link
+                  to="/products"
+                  className="btn-nutri-primary"
+                >
+                  Shop Combo
+                  <i className="bi bi-arrow-right"></i>
+                </Link>
               </div>
 
-              <div className="col-lg-5 text-center">
-
+              <div className="col-lg-5">
                 <div className="promo-img-wrapper">
-
                   <img
-                    src="https://images.unsplash.com/photo-1514733670139-4d87a1941d55?auto=format&fit=crop&w=700&q=80"
-                    alt="NutriDry Gift Box"
-                    className="promo-banner-img img-fluid"
+                    src="https://images.unsplash.com/photo-1514733670139-4d87a1941d55?auto=format&fit=crop&w=800&q=85"
+                    alt="Dry Fruit Gift Pack"
+                    className="promo-banner-img"
                   />
-
-                  <div className="promo-circle-badge animate-pulse">
-                    <span>SAVE</span>
-                    <strong>20%</strong>
-                  </div>
-
                 </div>
-
               </div>
 
             </div>
-
           </div>
-
         </div>
-
       </section>
 
       {/* ABOUT */}
       <section
-        className="about-section py-5"
+        className="about-section"
         id="about"
       >
-
         <div className="container">
 
           <div className="row align-items-center g-5">
 
             <div className="col-lg-6">
+              <div className="about-image-wrapper">
+                <img
+                  src="https://images.unsplash.com/photo-1508061253366-f7da158b6d46?auto=format&fit=crop&w=900&q=85"
+                  alt="Premium Dry Fruits"
+                  className="about-main-image"
+                />
 
-              <div className="about-image-mosaic">
-
-                <div className="mosaic-main">
-
-                  <img
-                    src="https://images.unsplash.com/photo-1508061253366-f7da158b6d46?auto=format&fit=crop&w=700&q=80"
-                    alt="NutriDry Almond Orchards"
-                    className="img-fluid rounded-4 shadow-md"
-                  />
-
-                </div>
-
-                <div className="mosaic-floating-card animate-float">
-
-                  <i className="bi bi-award-fill text-warning"></i>
+                <div className="about-floating-card">
+                  <i className="bi bi-award-fill"></i>
 
                   <div>
-
-                    <strong>
-                      100% Purity Certified
-                    </strong>
-
-                    <span>
-                      Non-GMO • Gluten-Free
-                    </span>
-
+                    <strong>Trusted Quality</strong>
+                    <span>Fresh & carefully packed</span>
                   </div>
-
                 </div>
-
               </div>
-
             </div>
 
             <div className="col-lg-6">
-
               <span className="section-tag">
-                <i className="bi bi-info-circle-fill"></i>{" "}
-                Our Story & Promise
+                <i className="bi bi-info-circle-fill"></i>
+                About NutriDry
               </span>
 
               <h2 className="section-title">
-                Nourishing Lives With Pure, Sun-Drenched Nature
+                Naturally Good. Simply Healthy.
               </h2>
 
               <p className="about-lead">
-                At <strong>NutriDry</strong>, we believe snacking
-                should be both deeply satisfying and powerfully
-                wholesome. We work directly with certified family
-                orchards across Kashmir, California, and the
-                Mediterranean.
+                We bring you premium dry fruits that combine
+                delicious taste with everyday nutrition.
               </p>
 
-              <div className="about-points-list my-4">
+              <div className="about-points-list">
 
-                <div className="about-point d-flex gap-3 mb-3">
-
-                  <div className="point-icon">
-                    <i className="bi bi-check2-circle"></i>
-                  </div>
-
+                <div className="about-point">
+                  <i className="bi bi-check-circle-fill"></i>
                   <div>
-
-                    <h5>Direct From Source</h5>
-
-                    <p className="mb-0 text-muted">
-                      Eliminating middlemen to guarantee farmers
-                      fair prices and you get the freshest
-                      current-season harvest.
+                    <h4>Carefully Selected</h4>
+                    <p>
+                      Every product is selected for quality,
+                      freshness and natural taste.
                     </p>
-
                   </div>
-
                 </div>
 
-                <div className="about-point d-flex gap-3 mb-3">
-
-                  <div className="point-icon">
-                    <i className="bi bi-check2-circle"></i>
-                  </div>
-
+                <div className="about-point">
+                  <i className="bi bi-check-circle-fill"></i>
                   <div>
-
-                    <h5>
-                      Multi-Stage Nitrogen Flushing
-                    </h5>
-
-                    <p className="mb-0 text-muted">
-                      Our airtight zip pouches and glass jars
-                      lock in natural oils, aroma, and crispiness
-                      without artificial gases.
+                    <h4>Fresh Packaging</h4>
+                    <p>
+                      Products are packed carefully to preserve
+                      their natural crunch and flavor.
                     </p>
-
                   </div>
-
                 </div>
 
-                <div className="about-point d-flex gap-3">
-
-                  <div className="point-icon">
-                    <i className="bi bi-check2-circle"></i>
-                  </div>
-
+                <div className="about-point">
+                  <i className="bi bi-check-circle-fill"></i>
                   <div>
-
-                    <h5>
-                      Eco-Friendly Packaging
-                    </h5>
-
-                    <p className="mb-0 text-muted">
-                      100% recyclable containers and biodegradable
-                      paper shipping cartons for a healthier planet.
+                    <h4>Healthy Snacking</h4>
+                    <p>
+                      A simple and tasty choice for your daily
+                      snack routine.
                     </p>
-
                   </div>
-
                 </div>
 
               </div>
 
               <Link
                 to="/products"
-                className="btn-nutri-primary mt-2"
+                className="btn-nutri-primary"
               >
-                <span>
-                  Explore Our Full Catalog
-                </span>
-
+                Explore Products
                 <i className="bi bi-arrow-right"></i>
               </Link>
-
             </div>
 
           </div>
-
         </div>
-
       </section>
 
       {/* TESTIMONIALS */}
-      <section className="testimonials-section py-5">
-
+      <section className="testimonials-section">
         <div className="container">
 
           <div className="section-header">
-
             <span className="section-tag">
-              <i className="bi bi-chat-heart-fill"></i>{" "}
-              Verified Customer Love
+              <i className="bi bi-chat-heart-fill"></i>
+              Customer Reviews
             </span>
 
             <h2 className="section-title">
-              What Our Snacking Family Says
+              What Our Customers Say
             </h2>
 
             <p className="section-subtitle">
-              Join thousands of health enthusiasts, chefs, and
-              families who trust NutriDry for their daily nutrition.
+              Fresh products, great taste and happy customers.
             </p>
-
           </div>
 
           <div className="row g-4">
-
-            {TESTIMONIALS_DATA.map((t) => (
-
+            {TESTIMONIALS_DATA.slice(0, 3).map((testimonial) => (
               <div
-                key={t.id}
                 className="col-12 col-md-4"
+                key={testimonial.id}
               >
-
-                <div className="testimonial-card h-100">
+                <div className="testimonial-card">
 
                   <div className="testimonial-quote-icon">
                     <i className="bi bi-quote"></i>
                   </div>
 
-                  <div className="stars text-warning mb-3">
-
-                    {[...Array(t.rating)].map((_, i) => (
-
-                      <i
-                        key={i}
-                        className="bi bi-star-fill me-1"
-                      ></i>
-
-                    ))}
-
+                  <div className="stars mb-3">
+                    {"★★★★★"}
                   </div>
 
                   <p className="testimonial-comment">
-                    "{t.comment}"
+                    "{testimonial.comment}"
                   </p>
 
-                  <div className="testimonial-author d-flex align-items-center gap-3 mt-4 pt-3 border-top">
-
+                  <div className="testimonial-author">
                     <img
-                      src={t.avatar}
-                      alt={t.name}
-                      className="author-avatar"
+                      src={testimonial.avatar}
+                      alt={testimonial.name}
                     />
 
                     <div>
-
-                      <h4 className="author-name mb-0">
-                        {t.name}
-                      </h4>
-
-                      <span className="author-role">
-                        {t.role}
-                      </span>
-
+                      <h4>{testimonial.name}</h4>
+                      <span>{testimonial.role}</span>
                     </div>
-
                   </div>
 
                 </div>
-
               </div>
-
             ))}
-
           </div>
 
         </div>
-
       </section>
 
       <Footer />

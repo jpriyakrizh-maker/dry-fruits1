@@ -1,20 +1,10 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color:lemonchiffon;
 }
 
-body {
-  margin: 0;
-  background: #fff9f2;
-}
-
-a {
-  text-decoration: none;
-}
-
-button,
-input,
-select {
-  font-family: inherit;
+main {
+  flex: 1;
 }

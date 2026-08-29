@@ -14,7 +14,6 @@ import CartToast from "./components/CartToast";
 
 import "./App.css";
 
-// Scroll to top helper on page change
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
 
@@ -64,24 +63,18 @@ function App() {
     }));
   };
 
-  const basename = import.meta.env.BASE_URL || "/";
-
   return (
-    <BrowserRouter basename={basename}>
+    <BrowserRouter basename="/dry-fruits">
       <ScrollToTop />
 
       <div className="app-container">
-
-        {/* Navigation Bar */}
         <Navbar cartCount={cartCount} />
 
-        {/* Cart Toast */}
         <CartToast
           toastInfo={toastInfo}
           onClose={closeToast}
         />
 
-        {/* Main Pages */}
         <Routes>
           <Route
             path="/"
@@ -93,19 +86,16 @@ function App() {
             element={<Products addToCart={addToCart} />}
           />
 
-          {/* Shop alias */}
           <Route
             path="/shop"
             element={<Navigate to="/products" replace />}
           />
 
-          {/* Catch-all route */}
           <Route
             path="*"
             element={<Navigate to="/" replace />}
           />
         </Routes>
-
       </div>
     </BrowserRouter>
   );
